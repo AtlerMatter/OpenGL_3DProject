@@ -1,0 +1,129 @@
+{
+	"version": "2.0.0",
+	"windows": {
+		"options": {
+			"shell": {
+				"executable": "cmd.exe",
+				"args": [
+					"/C",
+					//"C:\\Program^ Files^ ^(x86^)\\Microsoft^ Visual^ Studio\\2019\\Community\\Common7\\Tools\\VsDevCmd.bat",
+					//"C:\\Program^ Files^ ^(x86^)\\Microsoft^ Visual^ Studio\\2019\\Community\\VC\\Auxiliary\\Build\\vcvars64.bat",
+					"%PROGRAMFILES%\\Microsoft^ Visual^ Studio\\2022\\Community\\VC\\Auxiliary\\Build\\vcvars64.bat",
+					"&&"
+				]
+			}
+		}
+	},
+	"tasks": [
+		{
+			"type": "shell",
+			"label": "C/C++: cl.exe build project DEBUG",
+			"command": "cl.exe",
+			"args": [
+				"/Zi",
+				"/EHsc",
+				"/nologo",
+				"/MDd",
+
+				//Optimization stuff
+				"/fp:precise",
+				"/sdl",
+
+				//APIs
+				//"/IAPI\\glad\\include",
+				//"/IAPI\\glfw\\include",
+				"/Iinclude",
+
+				//Structure Stuff
+				"/Fedebug\\${workspaceFolderBasename}_debug.exe",
+				"/Fodebug\\",
+				"/Fddebug\\",
+
+				//Files
+				"src\\*.cpp",
+
+				//API Files
+				//"API\\glad\\src\\*.c",
+				//"include\\GLAD\\*.c",
+				"lib\\*.c",
+
+				//Linker options
+				"/link",
+				"/MACHINE:X64",
+
+				//lib files
+				"lib\\*.lib",
+				//"opengl32.lib",
+				"gdi32.lib",
+				"user32.lib",
+				"kernel32.lib",
+				"shell32.lib"
+			],
+			"options": {
+				//"cwd": "${fileDirname}"
+				"cwd": "${workspaceFolder}"
+			},
+			"problemMatcher": [
+				"$msCompile"
+			],
+			"group": {
+				"kind": "build",
+				"isDefault": true
+			},
+			"detail": "compiler: cl.exe"
+		},
+		{
+			"type": "shell",
+			"label": "C/C++: cl.exe build project RELEASE",
+			"command": "cl.exe",
+			"args": [
+				//"/Zi",
+				"/EHsc",
+				"/nologo",
+
+				//Optimization stuff
+				"/fp:precise",
+				"/sdl",
+				"/O2",
+				"/GL",
+				
+				//APIs
+				"/Iinclude",
+
+				//Structure Stuff
+				"/Febuild\\${workspaceFolderBasename}_release.exe",
+				"/Fobuild\\",
+				"/Fdbuild\\",
+
+				//Files
+				"src\\*.cpp",
+
+				//API Files
+				//"include\\GLAD\\*.c",
+				"lib\\*.c",
+
+				//Linker options
+				"/link",
+				"/MACHINE:X64",
+				"lib\\*.lib",
+				//"opengl32.lib",
+				"gdi32.lib",
+				"user32.lib",
+				"kernel32.lib",
+				"shell32.lib"
+			],
+			"options": {
+				//"cwd": "${fileDirname}"
+				"cwd": "${workspaceFolder}"
+			},
+			"problemMatcher": [
+				"$msCompile"
+			],
+			"group": {
+				"kind": "build",
+				//"isDefault": true
+			},
+			"detail": "compiler: cl.exe"
+		}
+	]
+}

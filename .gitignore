@@ -1,0 +1,17 @@
+#Directories
+build/
+debug/
+API/
+
+
+#Files
+*.bat
+
+
+#Visual Studio
+.vs/
+*.sln
+*.vcxproj
+*.vcxproj.filters
+*.vcxproj.user
+.vscode/c_cpp_properties.json
