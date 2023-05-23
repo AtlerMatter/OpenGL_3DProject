@@ -8,7 +8,7 @@ for %%I in (.) do set CurrDir=%%~nI%%~xI
 
 call "%PROGRAMFILES%\Microsoft Visual Studio\2022\Community\VC\Auxiliary\Build\vcvars64.bat" 
 
-cl.exe /ZI /W4 /EHsc /MDd /Od /RTC1 /fp:precise /sdl /Iinclude /Fedebug\\%CurrDir%_debug.exe /Fodebug\\ /Fddebug\\ %name% lib\\*.c /link /MACHINE:X64 lib\\*.lib gdi32.lib user32.lib kernel32.lib shell32.lib
+cl.exe /ZI /W4 /EHsc /MDd /Od /RTC1 /MP /fp:precise /sdl /Iinclude /Fedebug\\%CurrDir%_debug.exe /Fodebug\\ /Fddebug\\ %name% lib\\*.c /link /MACHINE:X64 lib\\*.lib gdi32.lib user32.lib kernel32.lib shell32.lib
 
 ::Commented out compiler options
 :: /nologo 
