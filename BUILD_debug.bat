@@ -8,7 +8,7 @@ cl.exe /ZI /W4 /EHsc /MDd /Od /RTC1 /MP /fp:precise /sdl /Iinclude /Fedebug\\%Cu
 ::Commented out compiler options
 :: /nologo 
 
-pause
+::pause
 exit
 
 

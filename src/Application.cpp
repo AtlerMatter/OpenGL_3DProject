@@ -6,6 +6,9 @@
 #include "GLAD/glad.h"
 #include "GLFW/glfw3.h"
 
+#include "Renderer.h"
+
+
 const int windowWidth = 1280;
 const int windowHeight = 720;
 const char *windowTitle = "OpenGL WIP Voxel Game";
@@ -96,7 +99,7 @@ int main(){
     }
 
     glfwMakeContextCurrent(window);
-    glfwSwapInterval(1);
+    //glfwSwapInterval(1);
 
     if (!gladLoadGLLoader((GLADloadproc)glfwGetProcAddress)) {
         return -1;
@@ -135,6 +138,10 @@ int main(){
     unsigned int shader = CreateShader(source.VertexSource, source.FragmentSource);
     glUseProgram(shader);
 
+    int location = glGetUniformLocation(shader, "u_Color");
+    ASSERT(location != 1);
+    glUniform4f(location, 0.8f, 0.3f, 0.8f, 1.0f);
+
     float r = 0.0f;
     float slew = 0.05f;
     //glViewport(0, 0, windowWidth, windowHeight);
@@ -143,6 +150,7 @@ int main(){
         glClear(GL_COLOR_BUFFER_BIT);
         //glClearColor(r, 119.0f / 255.0f, 110.0f / 255.0f, 1.0f);
 
+        glUniform4f(location, r, 0.3f, 0.8f, 1.0f);
         glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, nullptr);
         
         r += slew;

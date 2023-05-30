@@ -9,7 +9,7 @@ cl.exe /EHsc /MD /fp:precise /sdl /O2 /GL /Ob2 /MP /Iinclude /Fedebug\\%CurrDir%
 :: /Zi
 :: /nologo 
 
-pause
+::pause
 exit
 
 
