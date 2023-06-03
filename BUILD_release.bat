@@ -3,7 +3,7 @@ setlocal EnableDelayedExpansion
 goto Setup
 
 :Compile
-cl.exe /EHsc /MD /fp:precise /sdl /O2 /GL /Ob2 /MP /Iinclude /Fedebug\\%CurrDir%_debug.exe /Fodebug\\ /Fddebug\\ %file% lib\\*.c /link /MACHINE:X64 lib\\*.lib gdi32.lib user32.lib kernel32.lib shell32.lib
+cl.exe /EHsc /MT /fp:precise /sdl /O2 /GL /Ob2 /MP /Iinclude /Fedebug\\%CurrDir%_debug.exe /Fodebug\\ /Fddebug\\ %file% lib\\*.c /link /MACHINE:X64 lib\\*.lib gdi32.lib user32.lib kernel32.lib shell32.lib
 
 ::Commented out compiler options
 :: /Zi
