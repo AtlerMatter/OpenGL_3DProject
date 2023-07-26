@@ -8,6 +8,7 @@ _API/
 *.bat
 !BUILD_debug.bat
 !BUILD_release.bat
+.vscode/settings.json
 
 
 #Visual Studio
