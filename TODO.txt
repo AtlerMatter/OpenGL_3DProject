@@ -1,4 +1,4 @@
 
--Change the Build Batch to be a single file, with a debug and release option passed as argument, perhaps other options for versatility and other compilers, etc. Defaults debug.
+-Switch the build system to CMake
 
 -
