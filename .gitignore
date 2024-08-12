@@ -1,14 +1,18 @@
 #Directories
 build/
 debug/
+cmake/
 _API/
+_Solution/
 
 
 #Files
 *.bat
-!BUILD_debug.bat
-!BUILD_release.bat
+!GenSolution.bat
+*.sh
+!GenSolution.sh
 .vscode/settings.json
+.vscode/
 
 
 #Visual Studio
