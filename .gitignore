@@ -1,15 +1,13 @@
 #Directories
-build/
-debug/
-cmake/
-_API/
-_Solution/
+/build/
+/debug/
+/_API/
 
 
 #Files
-*.bat
+/*.bat
 !GenSolution.bat
-*.sh
+/*.sh
 !GenSolution.sh
 .vscode/settings.json
 .vscode/
@@ -23,3 +21,11 @@ _Solution/
 *.vcxproj.user
 .vscode/c_cpp_properties.json
 .vscode_legacy
+
+
+#Cmake
+#_Solution/
+#cmake/
+*.cmake
+CMakeCache.txt
+CMakeFiles/
